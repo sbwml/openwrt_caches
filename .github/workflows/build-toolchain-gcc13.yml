@@ -54,11 +54,10 @@ jobs:
     - name: Build System Setup
       uses: sbwml/actions@openwrt-build-setup
 
-    - name: Install LLVM
-      uses: sbwml/actions@install-llvm-19
-
     - name: Compile Toolchain
       working-directory: /builder
+      env:
+        git_password: ${{ secrets.git_password }}
       run: |
         export PATH="/opt/clang/bin:$PATH"
         [ "${{ matrix.libc }}" = "glibc" ] && export ENABLE_GLIBC=y
