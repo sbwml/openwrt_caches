@@ -16,6 +16,7 @@ jobs:
           - nanopi-r5s
           - netgear_r8500
           - x86_64
+          - redmi_ax6000
         tag:
           - type: rc2
             version: openwrt-24.10
